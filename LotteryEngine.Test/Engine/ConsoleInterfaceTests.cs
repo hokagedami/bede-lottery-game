@@ -1,7 +1,8 @@
 using LotteryEngine.Engine;
 using LotteryEngine.Entities;
+using LotteryEngine.Test.Helpers;
 
-namespace LotteryEngine.Test;
+namespace LotteryEngine.Test.Engine;
 
 /// <summary>
 /// Tests for the ConsoleInterface class
@@ -201,14 +202,14 @@ public class ConsoleInterfaceTests
         Assert.Contains(mockConsole.Output, line => line.Contains("$"));
     }
 
-    private Player CreatePlayerWithTickets(string id, int ticketCount)
+    private static Player CreatePlayerWithTickets(string id, int ticketCount)
     {
         var player = new Player(id, initialBalance: 10m);
         player.PurchaseTickets(ticketCount);
         return player;
     }
 
-    private GameResults CreateSampleGameResults()
+    private static GameResults CreateSampleGameResults()
     {
         return new GameResults
         {

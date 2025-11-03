@@ -1,7 +1,6 @@
-
 using LotteryEngine.Configuration;
 
-namespace LotteryEngine.Test;
+namespace LotteryEngine.Test.Configuration;
 
 /// <summary>
 /// Tests for lottery configuration and its validation

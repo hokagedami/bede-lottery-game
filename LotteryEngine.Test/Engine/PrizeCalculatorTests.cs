@@ -2,7 +2,7 @@ using LotteryEngine.Configuration;
 using LotteryEngine.Engine;
 using LotteryEngine.Entities;
 
-namespace LotteryEngine.Test;
+namespace LotteryEngine.Test.Engine;
 
 /// <summary>
 /// Tests for the PrizeCalculator class

@@ -1,6 +1,6 @@
 ﻿using LotteryEngine.Interfaces;
 
-namespace LotteryEngine.Test;
+namespace LotteryEngine.Test.Helpers;
 
 /// <summary>
 /// Mock console wrapper for testing

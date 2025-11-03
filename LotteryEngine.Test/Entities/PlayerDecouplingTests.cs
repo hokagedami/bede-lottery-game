@@ -1,6 +1,6 @@
 using LotteryEngine.Entities;
 
-namespace LotteryEngine.Test;
+namespace LotteryEngine.Test.Entities;
 
 /// <summary>
 /// Tests demonstrating Player decoupling from configuration

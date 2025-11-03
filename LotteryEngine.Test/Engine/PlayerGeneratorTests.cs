@@ -1,9 +1,7 @@
-
-
 using LotteryEngine.Configuration;
 using LotteryEngine.Engine;
 
-namespace LotteryEngine.Test;
+namespace LotteryEngine.Test.Engine;
 
 /// <summary>
 /// Tests for the PlayerGenerator class

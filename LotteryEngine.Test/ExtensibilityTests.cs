@@ -2,6 +2,7 @@ using LotteryEngine.Configuration;
 using LotteryEngine.Engine;
 using LotteryEngine.Entities;
 using LotteryEngine.Interfaces;
+using LotteryEngine.Test.Helpers;
 
 namespace LotteryEngine.Test;
 
@@ -33,7 +34,6 @@ public class ExtensibilityTests
         var game = new LotteryGame(playerGenerator, customCalculator, config);
 
         game.Initialize(5);
-        var tickets = game.GetAllTickets();
         var drawResults = game.DrawWinners();
         var gameResults = game.GetGameResults(drawResults);
 
@@ -172,51 +172,4 @@ public class ExtensibilityTests
         }
         return tickets;
     }
-}
-
-/// <summary>
-/// Custom player generator for testing extensibility
-/// </summary>
-public class CustomPlayerGenerator : IPlayerGenerator
-{
-    public List<Player> GenerateCpuPlayers(int humanPlayerCount)
-    {
-        var players = new List<Player>
-        {
-            new Player("CUSTOM1", initialBalance: 10m),
-            new Player("CUSTOM2", initialBalance: 10m),
-            new Player("CUSTOM3", initialBalance: 10m)
-        };
-
-        foreach (var player in players)
-        {
-            player.PurchaseTickets(5);
-        }
-
-        return players;
-    }
-}
-
-/// <summary>
-/// Custom prize calculator for testing extensibility
-/// </summary>
-public class CustomPrizeCalculator : IPrizeCalculator
-{
-    public DrawResults DrawWinners(List<Ticket> allTickets)
-    {
-        return new DrawResults
-        {
-            GrandPrizeWinners = new List<Ticket> { allTickets[0] },
-            SecondTierWinners = allTickets.Skip(1).Take(2).ToList(),
-            ThirdTierWinners = allTickets.Skip(3).Take(3).ToList()
-        };
-    }
-
-    public decimal CalculateGrandPrize(List<Ticket> allTickets) => 100m;
-
-    public decimal CalculateSecondTierPrizePerWinner(List<Ticket> allTickets, int winnerCount) => 50m;
-
-    public decimal CalculateThirdTierPrizePerWinner(List<Ticket> allTickets, int winnerCount) => 25m;
-
-    public decimal CalculateHouseProfit(List<Ticket> allTickets) => 10m;
 }

@@ -1,7 +1,7 @@
 
 using LotteryEngine.Entities;
 
-namespace LotteryEngine.Test;
+namespace LotteryEngine.Test.Entities;
 
 /// <summary>
 /// Tests for the Ticket class

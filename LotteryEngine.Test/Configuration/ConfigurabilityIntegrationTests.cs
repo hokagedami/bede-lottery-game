@@ -1,7 +1,7 @@
 using LotteryEngine.Configuration;
 using LotteryEngine.Engine;
 
-namespace LotteryEngine.Test;
+namespace LotteryEngine.Test.Configuration;
 
 /// <summary>
 /// Integration tests verifying the system works with different configurations

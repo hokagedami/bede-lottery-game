@@ -1,9 +1,8 @@
-
 using LotteryEngine.Configuration;
 using LotteryEngine.Engine;
 using LotteryEngine.Interfaces;
 
-namespace LotteryEngine.Test;
+namespace LotteryEngine.Test.Engine;
 
 /// <summary>
 /// Tests for the LotteryGame class
